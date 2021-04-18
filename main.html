@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Page Title</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="">
+<style>
+</style>
+<script src=""></script>
+<body>
+
+<img src="img_la.jpg" alt="LA" style="width:100%">
+
+<div class="mainbody">
+ <h1>AP Style auto-checker v1! :D</h1>
+ <p>This is a paragraph, because I don't know HTML well. HTML badd</p>
+
+ <p id="test1">Test1 | Email suggestions to ethanctrooper@gmail.com or web@palyvoice.com.</p>
+
+ <p id="instructionsBox" style="padding-bottom: 10px"> Type or copy+paste your text into the box below! It will appear with potential
+   errors highlighted in yellow. </p>
+
+ <p id="errorsHighlighted"><i> Checked text should appear here. Please contact us if you can see this :) </i></p>
+
+ <input name="inputBox" type="text" maxlength="8192" id="inputBox" class="searchField" onkeyup="search()"/>
+
+ <div id="inputBox" contenteditable onkeyup="search()" class="searchField" style="padding-top: 50px">
+  shh this is editable, mayb coming soon :eyes:
+ </div>
+
+ <!-- first script to load the src, second one to call search() -->
+ <script src="searcher.js"></script>
+ <script>search()</script>
+
+
+</div>
+
+</body>
+</html>
