@@ -26,8 +26,6 @@ function search(){
 
 }
 
-// ff10
-
 //USAGE: find matching regEx from text.
 //PARAMETERS: oldInput is input text, regexExpression is the regular expression.
 //RETURNS: text with <mark></mark> around matching regEx.
