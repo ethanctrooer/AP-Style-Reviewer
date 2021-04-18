@@ -1,16 +1,5 @@
-
-
 function search(){
   var rawInput = document.querySelector('.searchField').value
-
-  /* code to print out all of the threedoterrors to ID "errorsHighlighted"
-  document.getElementById("test1").innerHTML = x
-
-  const regexp_threedots = /\w\.\.\.\w/g;
-
-  const threedoterrors = [...rawInput.matchAll(regexp_threedots)];
-  document.getElementById("errorsHighlighted").innerHTML = threedoterrors.toString()
-  */
 
   //next project: try to get the thing to highlight the text in the input box as it's being inputted
     //UPDATE: Project done! see active code below. This code is now depricated.
@@ -36,6 +25,8 @@ function search(){
   //End of search()
 
 }
+
+// ff10
 
 //USAGE: find matching regEx from text.
 //PARAMETERS: oldInput is input text, regexExpression is the regular expression.
