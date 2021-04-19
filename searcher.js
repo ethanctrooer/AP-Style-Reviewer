@@ -11,7 +11,19 @@ function search(){
     */
 
   //add new values to be highlighted here!
-  var highlightArray = [/\S\.\.\.\S/g, /said[^.]/g]
+  //im making a file for this
+
+  //var rawJSON = document.getElementById('JSONInputFile')
+  //var regexdata = JSON.parse(rawJSON)
+  //var regexdata = regEx_array
+  var rawJSON = $.getJSON("regEx_data.json", function(json) {
+    console.log(json); // this will show the info it in firebug console
+  })
+  var regexdata = JSON.parse(rawJSON)
+
+  console.log(jsonFile)
+
+  var highlightArray = [/\S\.\.\.\S/g, /said[^.]/g, /[0-9]/g, /am/g, /pm/g, /tomorrow/g, /yesterday/g, /Calif/g]
   var finalMutableString = [rawInput]
   //do NOT use for in! that will only return index, use for OF to get value at index.
   for(var x of highlightArray){

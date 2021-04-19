@@ -1,0 +1,5 @@
+{
+
+  regEx_array : "[/\S\.\.\.\S/g, /am/g, /pm/g, /tomorrow/g, /yesterday/g, /Calif/g]"
+
+}
