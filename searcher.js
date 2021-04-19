@@ -16,17 +16,40 @@ function search(){
   //var rawJSON = document.getElementById('JSONInputFile')
   //var regexdata = JSON.parse(rawJSON)
   //var regexdata = regEx_array
+
+  /*
   var rawJSON = $.getJSON("regEx_data.json", function(json) {
     console.log(json); // this will show the info it in firebug console
   })
   var regexdata = JSON.parse(rawJSON)
+  */
 
-  console.log(jsonFile)
 
-  var highlightArray = [/\S\.\.\.\S/g, /said[^.]/g, /[0-9]/g, /am/g, /pm/g, /tomorrow/g, /yesterday/g, /Calif/g]
+  var highlightArray = []
+  await fetch('regEx_data.json')
+  .then(response => response.json())
+  //.then(data => console.log(data));
+
+
+  .then(data => {
+
+    for(var x of data.regEx_array){
+      highlightArray.push(x)
+      console.log(x)
+    }
+  })
+
+  console.log("highlightarray: " + highlightArray)
+
+  console.log('here')
+  //console.log(jsonFile)
+
+  //var highlightArray = [/\S\.\.\.\S/g, /said[^.]/g, /[0-9]/g, /am/g, /pm/g, /tomorrow/g, /yesterday/g, /Calif/g]
   var finalMutableString = [rawInput]
   //do NOT use for in! that will only return index, use for OF to get value at index.
+
   for(var x of highlightArray){
+    console.log("x: " + x)
     finalMutableString[0] = addToHighlights(finalMutableString[0], x)
   }
 

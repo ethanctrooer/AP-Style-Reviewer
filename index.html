@@ -4,9 +4,11 @@
 <title>AP Style Autochecker</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="">
+<!--
 <head>
   <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+-->
 <body>
 
 <!-- <img src="img_la.jpg" alt="LA" style="width:100%"> -->
@@ -27,6 +29,9 @@
  <div id="inputBox" contenteditable onkeyup="search()" class="searchField" style="padding-top: 50px">
   shh this is editable, mayb coming soon :eyes:
  </div>
+
+ <!-- load json -->
+ <script src="jsonParser.js"></script>
 
  <!-- first script to load the src, then call search() -->
  <script src="searcher.js"></script>
