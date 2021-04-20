@@ -1,4 +1,4 @@
-function search(){
+function search(highlightArrayInput){
   var rawInput = document.querySelector('.searchField').value
 
   //next project: try to get the thing to highlight the text in the input box as it's being inputted
@@ -24,8 +24,18 @@ function search(){
   var regexdata = JSON.parse(rawJSON)
   */
 
-
   var highlightArray = []
+  for(var x of highlightArrayInput){
+    // forward slashes removed from regex file b/c RegExp adds them automatically;
+    //"g" tag adds global tag to regular expression.
+    var regexObject = new RegExp(x, "g")
+    highlightArray.push(regexObject)
+  }
+
+  /*
+  var highlightArray = []
+
+
   await fetch('regEx_data.json')
   .then(response => response.json())
   //.then(data => console.log(data));
@@ -38,6 +48,7 @@ function search(){
       console.log(x)
     }
   })
+  */
 
   console.log("highlightarray: " + highlightArray)
 

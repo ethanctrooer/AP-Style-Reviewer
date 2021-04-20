@@ -1,4 +1,7 @@
-async function getJSON(){
+//USAGE: parse data from regex file and put in array; pass array to search() & call search() in searcher.js
+//PARAMETERS: None
+//RETURNS: None, but calls search() in searcher.js
+function getJSON(){
 
   var highlightArray = []
   fetch('regEx_data.json')
@@ -12,8 +15,11 @@ async function getJSON(){
       highlightArray.push(x)
       console.log(x)
     }
+
+    search(highlightArray)
+
   })
 
-  return highlightArray
+  //return highlightArray
 
 }
