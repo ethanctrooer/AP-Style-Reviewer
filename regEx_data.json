@@ -1,5 +1,5 @@
 {
 
-  "regEx_array":[ "\\S\\.\\.\\.\\S", "am", "pm", "tomorrow", "yesterday", "Calif" ]
+  "regEx_array":[ "\\S\\.\\.\\.\\S", "said[^.]", "am", "pm", "tomorrow", "yesterday", "Calif", "\\s\\s+" ]
 
 }
