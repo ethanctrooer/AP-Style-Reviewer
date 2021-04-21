@@ -25,7 +25,7 @@
  <div id="errorsHighlighted"><i> Checked text should appear here. Please contact us if you can see this :) </i></div>
 
  <!-- <input name="inputBox" type="text" maxlength="8192" id="inputBox" class="searchField" onkeyup="search()"/> -->
- <input name="inputBox" type="text" maxlength="8192" id="inputBox" class="searchField" onkeyup="getJSON()" autofocus/>
+ <textarea name="inputBox" cols="40" rows="5" type="text" maxlength="8192" id="inputBox" class="searchField" onkeyup="getJSON()" autofocus/></textarea>
 
  <div id="inputBox_contentEditable" contenteditable onkeyup="getJSON_contentEditable()" class="searchField" style="padding-top: 50px">
   shh this is editable, mayb coming soon :eyes:
@@ -36,6 +36,10 @@
 
  <!-- first script to load the src, then call search() -->
  <script src="searcher.js"></script>
+ <!-- load contentEditable scripts -->
+ <script src="searcher_contentEditable.js"></script>
+ <script src="jsonParser_contentEditable.js"></script>
+
  <!-- load json file -->
  <script type="text/javascript" src="regEx_data.json" id="JSONInputFile"></script>
 
