@@ -22,12 +22,12 @@
  <p id="instructionsBox" style="padding-bottom: 10px"> Type or copy+paste your text into the box below! It will appear with potential
    errors highlighted in yellow. </p>
 
- <p id="errorsHighlighted"><i> Checked text should appear here. Please contact us if you can see this :) </i></p>
+ <div id="errorsHighlighted"><i> Checked text should appear here. Please contact us if you can see this :) </i></div>
 
  <!-- <input name="inputBox" type="text" maxlength="8192" id="inputBox" class="searchField" onkeyup="search()"/> -->
  <input name="inputBox" type="text" maxlength="8192" id="inputBox" class="searchField" onkeyup="getJSON()" autofocus/>
 
- <div id="inputBox" contenteditable onkeyup="search()" class="searchField" style="padding-top: 50px">
+ <div id="inputBox_contentEditable" contenteditable onkeyup="getJSON_contentEditable()" class="searchField" style="padding-top: 50px">
   shh this is editable, mayb coming soon :eyes:
  </div>
 
