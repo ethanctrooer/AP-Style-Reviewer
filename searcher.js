@@ -1,5 +1,6 @@
 function search(highlightArrayInput){
-  var rawInput = document.querySelector('.searchField').value
+  //var rawInput = document.querySelector('.searchField').value
+  var rawInput = document.getElementById("inputBox_CE").innerText
 
   //next project: try to get the thing to highlight the text in the input box as it's being inputted
     //UPDATE: Project done! see active code below. This code is now depricated.
@@ -10,20 +11,6 @@ function search(highlightArrayInput){
   //document.getElementById("errorsHighlighted").innerHTML = newInput2
     */
 
-  //add new values to be highlighted here!
-  //im making a file for this
-
-  //var rawJSON = document.getElementById('JSONInputFile')
-  //var regexdata = JSON.parse(rawJSON)
-  //var regexdata = regEx_array
-
-  /*
-  var rawJSON = $.getJSON("regEx_data.json", function(json) {
-    console.log(json); // this will show the info it in firebug console
-  })
-  var regexdata = JSON.parse(rawJSON)
-  */
-
   var highlightArray = []
   for(var x of highlightArrayInput){
     // forward slashes removed from regex file b/c RegExp adds them automatically;
@@ -32,30 +19,10 @@ function search(highlightArrayInput){
     highlightArray.push(regexObject)
   }
 
-  /*
-  var highlightArray = []
-
-
-  await fetch('regEx_data.json')
-  .then(response => response.json())
-  //.then(data => console.log(data));
-
-
-  .then(data => {
-
-    for(var x of data.regEx_array){
-      highlightArray.push(x)
-      console.log(x)
-    }
-  })
-  */
-
   console.log("highlightarray: " + highlightArray)
 
   console.log('here')
-  //console.log(jsonFile)
 
-  //var highlightArray = [/\S\.\.\.\S/g, /said[^.]/g, /[0-9]/g, /am/g, /pm/g, /tomorrow/g, /yesterday/g, /Calif/g]
   var finalMutableString = [rawInput]
   //do NOT use for in! that will only return index, use for OF to get value at index.
 
@@ -67,6 +34,8 @@ function search(highlightArrayInput){
   var finalString = finalMutableString[0]
 
   document.getElementById("errorsHighlighted").innerHTML = finalString
+  document.getElementById("inputBox").value = finalString
+  document.getElementById("inputBox_CE").innerHTML = finalString
 
   //End of search()
 
