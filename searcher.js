@@ -1,19 +1,15 @@
 function search(highlightArrayInput){
-  //var rawInput = document.querySelector('.searchField').value
+
   var rawInput = document.getElementById("inputBox_CE").innerText
 
+  //get info of current caret position
+  
+
   //next project: try to get the thing to highlight the text in the input box as it's being inputted
-    //UPDATE: Project done! see active code below. This code is now depricated.
-    /*
-  //here's all the regex for finding stuff to highlight; add to here in order to find new ones.
-  //let newInput = rawInput.replace((/\S\.\.\.\S/g), markAdder);
-  //let newInput2 = newInput.replace(/said[^.]/g, markAdder);
-  //document.getElementById("errorsHighlighted").innerHTML = newInput2
-    */
 
   var highlightArray = []
   for(var x of highlightArrayInput){
-    // forward slashes removed from regex file b/c RegExp adds them automatically;
+    //forward slashes removed from regex file b/c RegExp adds them automatically;
     //"g" tag adds global tag to regular expression.
     var regexObject = new RegExp(x, "g")
     highlightArray.push(regexObject)
@@ -24,8 +20,8 @@ function search(highlightArrayInput){
   console.log('here')
 
   var finalMutableString = [rawInput]
-  //do NOT use for in! that will only return index, use for OF to get value at index.
 
+  //do NOT use for in! that will only return index, use for OF to get value at index.
   for(var x of highlightArray){
     console.log("x: " + x)
     finalMutableString[0] = addToHighlights(finalMutableString[0], x)
@@ -36,6 +32,9 @@ function search(highlightArrayInput){
   document.getElementById("errorsHighlighted").innerHTML = finalString
   document.getElementById("inputBox").value = finalString
   document.getElementById("inputBox_CE").innerHTML = finalString
+
+  //reset position of caret after replacement
+
 
   //End of search()
 
