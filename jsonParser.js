@@ -13,7 +13,7 @@ function getJSON(){
 
     for(var x of data.regEx_array){
       highlightArray.push(x)
-      console.log(x)
+      //console.log(x)
     }
 
     search(highlightArray)

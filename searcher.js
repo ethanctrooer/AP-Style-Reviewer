@@ -16,19 +16,24 @@ function search(highlightArrayInput){
     highlightArray.push(regexObject)
   }
 
-  console.log("highlightarray: " + highlightArray)
+  //console.log("highlightarray: " + highlightArray)
 
-  console.log('here')
+  //console.log('here')
 
   var finalMutableString = [rawInput]
 
   //do NOT use for in! that will only return index, use for OF to get value at index.
   for(var x of highlightArray){
-    console.log("x: " + x)
+    //console.log("x: " + x)
     finalMutableString[0] = addToHighlights(finalMutableString[0], x)
   }
 
   var finalString = finalMutableString[0]
+
+  var selNode = getSelectionStart()
+  //var offset = getCaretCharacterOffsetWithin(selNode)
+  //selBox.normalize()
+  var offset = getCaretCharacterOffsetWithin(selNode)
 
   document.getElementById("errorsHighlighted").innerHTML = finalString
   document.getElementById("inputBox").value = finalString
@@ -36,8 +41,7 @@ function search(highlightArrayInput){
 
   //reset position of caret after replacement
 
-  var selNode = getSelectionStart()
-  var offset = getCaretCharacterOffsetWithin(selNode)
+
   setCaret(selNode, offset)
 
 
@@ -86,15 +90,15 @@ function getCaretCharacterOffsetWithin(element) {
 }
 
 function testCaretPos(){
-  var selBox = document.getElementById("inputBox_CE")
+  //var selBox = document.getElementById("inputBox_CE")
   var caretBox = document.getElementById("caretPosOutput")
 
   var selNode = getSelectionStart()
 
-  console.log(getCaretCharacterOffsetWithin(selBox) + "LKAJHSFKLAUSHFKJANLJFHDLAKSD")
+  //console.log(getCaretCharacterOffsetWithin(selBox) + "LKAJHSFKLAUSHFKJANLJFHDLAKSD")
 
   caretBox.innerHTML = getCaretCharacterOffsetWithin(selNode)
-  console.log(getSelectionStart())
+  //console.log(getSelectionStart())
 }
 
 document.body.onkeyup = testCaretPos;
@@ -106,7 +110,22 @@ function setCaret(node, offset) {
     var range = document.createRange()
     var sel = window.getSelection()
 
-    range.setStart(node, offset)
+    var childrenNodes = el.childNodes
+    var counter = childrenNodes.length
+    for(var i=0; i<childrenNodes.length; i++){
+      console.log(node)
+      console.log(childrenNodes[i])
+      console.log(node.isEqualNode(childrenNodes[i]))
+      counter--
+      if(node.isEqualNode(childrenNodes[i])){
+        break
+      }
+    }
+    console.log(counter)
+
+    //range.setStart(node, offset)
+    //range.setStart(el.childNodes[counter], offset)
+    range.setStart(el.childNodes[counter], offset)
     range.collapse(true)
 
     sel.removeAllRanges()
@@ -116,5 +135,6 @@ function setCaret(node, offset) {
 //from https://stackoverflow.com/questions/1197401/get-element-node-at-caret-position-in-contenteditable
 function getSelectionStart() {
    var node = document.getSelection().anchorNode;
-   return (node.nodeType == 3 ? node.parentNode : node);
+   //return (node.nodeType == 3 ? node.parentNode : node);
+   return node
 }
