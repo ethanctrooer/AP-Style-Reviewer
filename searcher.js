@@ -9,39 +9,37 @@ function search(highlightArrayInput){
   //next project: try to get the thing to highlight the text in the input box as it's being inputted
 
   var highlightArray = []
+  var descArray = []
   for(var x of highlightArrayInput){
     //forward slashes removed from regex file b/c RegExp adds them automatically;
     //"g" tag adds global tag to regular expression.
-    var regexObject = new RegExp(x, "g")
+    var regexObject = new RegExp(x[0], "g")
     highlightArray.push(regexObject)
+    descArray.push(x[1])
   }
-
-  //console.log("highlightarray: " + highlightArray)
-
-  //console.log('here')
 
   var finalMutableString = [rawInput]
 
   //do NOT use for in! that will only return index, use for OF to get value at index.
-  for(var x of highlightArray){
-    //console.log("x: " + x)
-    finalMutableString[0] = addToHighlights(finalMutableString[0], x)
+  //for of loop was here
+  for(var i=0; i<highlightArray.length; i++){
+    finalMutableString[0] = addToHighlights(finalMutableString[0], highlightArray[i], descArray[i])
   }
 
   var finalString = finalMutableString[0]
 
+  //run caret grab info
   var selNode = getSelectionStart()
   //var offset = getCaretCharacterOffsetWithin(selNode)
   //selBox.normalize()
   var offset = getCaretCharacterOffsetWithin(selNode)
 
+  //replace text in box with formatted text
   document.getElementById("errorsHighlighted").innerHTML = finalString
   document.getElementById("inputBox").value = finalString
   document.getElementById("inputBox_CE").innerHTML = finalString
 
   //reset position of caret after replacement
-
-
   setCaret(selNode, offset)
 
 
@@ -49,20 +47,37 @@ function search(highlightArrayInput){
 
 }
 
+//GLOBAL VARIABLE
+var currentMarkAndToolTip = ""
+
 //USAGE: find matching regEx from text.
 //PARAMETERS: oldInput is input text, regexExpression is the regular expression.
 //RETURNS: text with <mark></mark> around matching regEx.
-function addToHighlights(oldInput, regexExpression){
+function addToHighlights(oldInput, regexExpression, toolTip){
+  //call addTitleTooltip here and concat it to OldINput then pass that to .replace
+  currentMarkAndToolTip = addTitleTooltip(toolTip)
+
   return oldInput.replace(regexExpression, markAdder)
+
 }
 
 //USAGE: add the <mark></mark> tag around inputted text.
 //PARAMETERS: See documentation for p1, offset & inputString. used input is match, which automatically comes from .replace
+//Documentation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#specifying_a_function_as_a_parameter
 //RETURNS: text with <mark></mark> around it
 function markAdder(match, p1, offset, inputString){
-  var mark = "<mark>"
+  var mark = currentMarkAndToolTip
   return mark.concat(match, "</mark>")
 }
+
+function addTitleTooltip(toolTipText){
+  var mark = '<mark title="' + toolTipText + '">'
+  return mark
+}
+
+//---------------------------------------------------------------\\
+//----------FORGET ABOUT EVERYTHING BELOW HERE FOR NOW-----------\\
+//---------------------------------------------------------------\\
 
 //from https://stackoverflow.com/questions/4811822/get-a-ranges-start-and-end-offsets-relative-to-its-parent-container/4812022#4812022
 function getCaretCharacterOffsetWithin(element) {

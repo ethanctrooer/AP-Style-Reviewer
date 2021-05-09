@@ -11,10 +11,22 @@ function getJSON(){
 
   .then(data => {
 
-    for(var x of data.regEx_array){
-      highlightArray.push(x)
+    //var highlightArrayJSON = JSON.parse(data.regEx_array)
+    var rawData = data.regEx_array
+    //console.log(rawData)
+
+
+    for(var x of rawData){
+      if(rawData.hasOwnProperty(data.keys)){
+      }
+      var temparray = []
+      temparray.push(x.regEx)
+      temparray.push(x.desc)
+      highlightArray.push(temparray)
       //console.log(x)
     }
+
+    console.table(highlightArray)
 
     search(highlightArray)
 
