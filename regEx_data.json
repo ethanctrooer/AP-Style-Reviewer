@@ -7,15 +7,23 @@
     },
     {
       "regEx" : "said[^.]",
-      "desc" : "placeholder"
+      "desc" : "For attributions: AP Style puts more emphasis on source name than the word said. Place said after the source name."
     },
     {
       "regEx" : "\\sam\\s",
-      "desc" : "placeholder"
+      "desc" : "For time: lowercase, with periods. Avoid the redundant 10 a.m. this morning. he abbreviations are correct only with figures."
+    },
+    {
+      "regEx" : "a\\.m\\.\\.",
+      "desc" : "Period after a.m. at the end of a sentence is not required. Add other puncuation, though (such as a.m.;)."
+    },
+    {
+      "regEx" : "p\\.m\\.\\.",
+      "desc" : "Period after p.m. at the end of a sentence is not required. Add other puncuation, though (such as p.m.;)."
     },
     {
       "regEx" : "\\Spm\\S",
-      "desc" : "placeholder"
+      "desc" : "For time: For time: lowercase, with periods. Avoid the redundant 10 p.m. tonight. he abbreviations are correct only with figures."
     },
     {
       "regEx" : "tomorrow",
