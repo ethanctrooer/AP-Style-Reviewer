@@ -11,7 +11,11 @@
     },
     {
       "regEx" : "\\sam\\s",
-      "desc" : "For time: lowercase, with periods. Avoid the redundant 10 a.m. this morning. he abbreviations are correct only with figures."
+      "desc" : "For time: lowercase, with periods. Avoid the redundant 10 a.m. this morning. The abbreviations are correct only with figures."
+    },
+    {
+      "regEx" : "\\spm\\s",
+      "desc" : "For time: lowercase, with periods. Avoid the redundant 10 p.m. this evening. The abbreviations are correct only with figures."
     },
     {
       "regEx" : "a\\.m\\.\\.",
@@ -27,7 +31,7 @@
     },
     {
       "regEx" : "tomorrow",
-      "desc" : "placeholder"
+      "desc" : "Use only in direct quotations and in phrases that do not refer to a specific day: The world of tomorrow will need additional energy resources. Use the day of the week in other cases."
     },
     {
       "regEx" : "yesterday",
@@ -38,7 +42,7 @@
       "desc" : "placeholder"
     },
     {
-      "regEx" : "\\s\\s+",
+      "regEx" : "  +",
       "desc" : "placeholder"
     },
     {
