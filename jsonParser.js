@@ -4,7 +4,7 @@
 function getJSON(){
 
   var highlightArray = []
-  fetch('regEx_data.json')
+  fetch("https://gitcdn.link/repo/ethanctrooer/AP-Style-Reviewer/master/regEx_data.json")
   .then(response => response.json())
   //.then(data => console.log(data));
 
