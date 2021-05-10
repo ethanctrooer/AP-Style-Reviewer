@@ -18,25 +18,27 @@
 
 <div class="mainbody">
  <h1>AP Style auto-checker v1! :D</h1>
- <p>This is a paragraph, because I don't know HTML well. HTML baddd</p>
+ <p>Welcome to the AP Style auto-checker!</p>
 
- <p id="test1">Test1 | Email suggestions to ethanctrooper@gmail.com or web@palyvoice.com.</p>
+ <p id="test1">Email suggestions to web@palyvoice.com.</p>
 
  <p id="instructionsBox" style="padding-bottom: 10px"> Type or copy+paste your text into the box below! It will appear with potential
    errors highlighted in yellow. </p>
 
- <p id="errorsHighlighted"><i> Checked text should appear here. Please contact us if you can see this :) </i></p>
+ <!-- all below style="display: none" are hiding developmental tools. Unhide for debugging. -->
 
- <p id="caretPosOutput"> notext </p>
+ <!-- below <p> will show text if something is compiling incorrectly. Useful for debugging catastrophic errors. -->
+ <p id="errorsHighlighted" style="display: none"><i> Checked text should appear here. Please contact us if you can see this :) </i></p>
 
- <!-- <input name="inputBox" type="text" maxlength="8192" id="inputBox" class="searchField" onkeyup="search()"/> -->
- <!-- <input name="inputBox" type="text" maxlength="8192" id="inputBox" class="searchField" onkeyup="getJSON()" autofocus/> -->
- <textarea name="inputBox" cols="40" rows="5" type="text" id="inputBox" class="searchField" onkeyup="getJSON()" autofocus/></textarea>
+ <!-- below <p> shows current caret (mouse cursor) position. Useful for future live updating while typing implementation. -->
+ <p id="caretPosOutput" style="display: none"> notext </p>
+
+ <!-- below textarea will show raw html. Useful for debugging the <mark> or <title> attributes. -->
+ <textarea name="inputBox" cols="40" rows="5" type="text" id="inputBox" class="searchField" onkeyup="getJSON()" style="display: none"/></textarea>
 
  <br>
 
- <!-- <div id="inputBox_CE" contenteditable onkeyup="getJSON()" class="searchField" style="padding-top: 50px"> -->
- <div id="inputBox_CE" contenteditable class="searchField" style="white-space: pre-wrap">Warning markers look like this: (...). Hover over the warning marker for additional AP Style information.</div>
+ <div id="inputBox_CE" autofocus contenteditable class="searchField" style="white-space: pre-wrap">Warning markers look like this: (...). Hover over the warning marker for additional AP Style information.</div>
 
  <br> </br>
  <button onclick="getJSON()">Check Text!</button>
@@ -44,12 +46,11 @@
  <!-- load json -->
  <script src="jsonParser.js"></script>
 
- <!-- first script to load the src, then call search() -->
+ <!-- first script to load the src, then call getJSON(), which calles search() -->
  <script src="searcher.js"></script>
  <!-- load json file -->
  <script type="text/javascript" src="regEx_data.json" id="JSONInputFile"></script>
 
- <!-- <script>search()</script> -->
  <script>getJSON()</script>
 
 
