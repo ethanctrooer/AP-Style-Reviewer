@@ -35,8 +35,8 @@ function search(highlightArrayInput){
   var offset = getCaretCharacterOffsetWithin(selNode)
 
   //replace text in box with formatted text
-  document.getElementById("errorsHighlighted").innerHTML = finalString
-  document.getElementById("inputBox").value = finalString
+  //document.getElementById("errorsHighlighted").innerHTML = finalString
+  //document.getElementById("inputBox").value = finalString
   document.getElementById("inputBox_CE").innerHTML = finalString
 
   //reset position of caret after replacement
@@ -112,7 +112,7 @@ function testCaretPos(){
 
   //console.log(getCaretCharacterOffsetWithin(selBox) + "LKAJHSFKLAUSHFKJANLJFHDLAKSD")
 
-  caretBox.innerHTML = getCaretCharacterOffsetWithin(selNode)
+  ////////caretBox.innerHTML = getCaretCharacterOffsetWithin(selNode)
   //console.log(getSelectionStart())
 }
 
