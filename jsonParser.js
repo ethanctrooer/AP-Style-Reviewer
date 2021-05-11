@@ -6,7 +6,7 @@ function getJSON(){
   var highlightArray = []
   //fetch("https://raw.githack.com/ethanctrooer/AP-Style-Reviewer/master/regEx_data.json")
   //^dev url, v production url
-  fetch("https://rawcdn.githack.com/ethanctrooer/AP-Style-Reviewer/9f8bc984bfb3b80535399507ac591486636cb799/jsonParser.js")
+  fetch("https://rawcdn.githack.com/ethanctrooer/AP-Style-Reviewer/c66a8996cc5ede3a21552d8fdecbce3cd06f7996/regEx_data.json")
   .then(response => response.json())
   //.then(data => console.log(data));
 
