@@ -4,7 +4,7 @@ function search(highlightArrayInput){
   var rawInput = document.getElementById("inputBox_CE").innerText
 
   //get info of current caret position
-  var currentCaretPos = getCaretCharacterOffsetWithin(selBox)
+    //var currentCaretPos = getCaretCharacterOffsetWithin(selBox)
 
   //next project: try to get the thing to highlight the text in the input box as it's being inputted
 
@@ -29,10 +29,10 @@ function search(highlightArrayInput){
   var finalString = finalMutableString[0]
 
   //run caret grab info
-  var selNode = getSelectionStart()
+    //var selNode = getSelectionStart()
   //var offset = getCaretCharacterOffsetWithin(selNode)
   //selBox.normalize()
-  var offset = getCaretCharacterOffsetWithin(selNode)
+    //var offset = getCaretCharacterOffsetWithin(selNode)
 
   //replace text in box with formatted text
   //document.getElementById("errorsHighlighted").innerHTML = finalString
@@ -40,7 +40,7 @@ function search(highlightArrayInput){
   document.getElementById("inputBox_CE").innerHTML = finalString
 
   //reset position of caret after replacement
-  setCaret(selNode, offset)
+    //setCaret(selNode, offset)
 
 
   //End of search()
