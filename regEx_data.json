@@ -2,7 +2,7 @@
 
   "regEx_array":[
     {
-      "regEx" : "test123!"
+      "regEx" : "test123!",
       "desc" : "Tooltip (hopefully helpful) text will appear here! :D"
     },
     {
