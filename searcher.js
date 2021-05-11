@@ -80,6 +80,7 @@ function addTitleTooltip(toolTipText){
 //---------------------------------------------------------------\\
 
 //from https://stackoverflow.com/questions/4811822/get-a-ranges-start-and-end-offsets-relative-to-its-parent-container/4812022#4812022
+/*
 function getCaretCharacterOffsetWithin(element) {
     var caretOffset = 0;
     var doc = element.ownerDocument || element.document;
@@ -153,3 +154,4 @@ function getSelectionStart() {
    //return (node.nodeType == 3 ? node.parentNode : node);
    return node
 }
+*/
