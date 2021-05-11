@@ -2,6 +2,10 @@
 
   "regEx_array":[
     {
+      "regEx" : "test123!"
+      "desc" : "Tooltip (hopefully helpful) text will appear here! :D"
+    }
+    {
       "regEx" : "\\S\\.\\.\\.\\S",
       "desc" : "In general, treat an ellipsis as a three-letter word, constructed with three periods and two spaces. If the words that precede an ellipsis constitute a grammatically complete sentence, either in the original or in the condensation, place a period at the end of the last word before the ellipsis. Follow it with a regular space and an ellipsis."
     },
